@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AudioFixer
+namespace AudioFixer.WinApi.Audio
 {
     [ComImport]
     [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]

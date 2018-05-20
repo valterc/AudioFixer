@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AudioFixer.WinApi
+namespace AudioFixer.WinApi.Audio
 {
     internal enum Role
     {

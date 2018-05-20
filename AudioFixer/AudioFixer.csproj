@@ -66,16 +66,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WinApi\DataFlow.cs" />
-    <Compile Include="WinApi\IAudioSessionControl.cs" />
-    <Compile Include="WinApi\IAudioSessionManager.cs" />
-    <Compile Include="WinApi\IMMDevice.cs" />
-    <Compile Include="WinApi\IMMDeviceEnumerator.cs" />
-    <Compile Include="WinApi\ISimpleAudioVolume.cs" />
-    <Compile Include="WinApi\MMDeviceEnumerator.cs" />
-    <Compile Include="WinApi\Role.cs" />
+    <Compile Include="WinApi\Audio\DataFlow.cs" />
+    <Compile Include="WinApi\Audio\IAudioSessionControl.cs" />
+    <Compile Include="WinApi\Audio\IAudioSessionManager.cs" />
+    <Compile Include="WinApi\Audio\IMMDevice.cs" />
+    <Compile Include="WinApi\Audio\IMMDeviceEnumerator.cs" />
+    <Compile Include="WinApi\Audio\ISimpleAudioVolume.cs" />
+    <Compile Include="WinApi\Audio\MMDeviceEnumerator.cs" />
+    <Compile Include="WinApi\Audio\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinApi\Processes\ProcessExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
