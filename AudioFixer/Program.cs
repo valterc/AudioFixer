@@ -4,9 +4,9 @@ using System.IO;
 using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Threading;
 using AudioFixer.WinApi;
 using AudioFixer.WinApi.Audio;
-using AudioFixer.WinApi.Processes;
 
 namespace AudioFixer
 {
@@ -17,18 +17,21 @@ namespace AudioFixer
             PlayResourceAudioFileLooping();
             MuteApplication();
 
-            ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-
-            Process.GetCurrentProcess().Suspend();
+            try
+            {
+                Thread.Sleep(100);
+                Process.GetCurrentProcess().Suspend();
+            }
+            catch (Exception)
+            {
+                // ignore
+            }
 
             while (true)
             {
-                System.Threading.Thread.Sleep(-1);
+                Thread.Sleep(-1);
             }
         }
-
-        [DllImport("kernel32.dll")]
-        static extern uint SuspendThread(IntPtr hThread);
 
         private static void PlayResourceAudioFileLooping()
         {
@@ -41,7 +44,6 @@ namespace AudioFixer
             {
                 Stream = stream
             };
-
             player.PlayLooping();
         }
 

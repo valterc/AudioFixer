@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AudioFixer.WinApi.Processes
+namespace AudioFixer.WinApi
 {
-    static class ProcessExtensions
+    public static class ProcessExtensions
     {
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern IntPtr GetCurrentProcess();

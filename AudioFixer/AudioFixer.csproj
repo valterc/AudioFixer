@@ -76,7 +76,7 @@
     <Compile Include="WinApi\Audio\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinApi\Processes\ProcessExtensions.cs" />
+    <Compile Include="WinApi\ProcessExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
