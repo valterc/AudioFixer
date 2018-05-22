@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using AudioFixer.WinApi;
 using AudioFixer.WinApi.Audio;
+using Microsoft.Win32;
 
 namespace AudioFixer
 {
@@ -14,6 +15,8 @@ namespace AudioFixer
     {
         static void Main(string[] args)
         {
+            SystemEvents.PowerModeChanged += OnPowerChange;
+
             PlayResourceAudioFileLooping();
             MuteApplication();
 
@@ -30,6 +33,16 @@ namespace AudioFixer
             while (true)
             {
                 Thread.Sleep(-1);
+            }
+        }
+
+        private static void OnPowerChange(object s, PowerModeChangedEventArgs e)
+        {
+            switch (e.Mode)
+            {
+                case PowerModes.Resume:
+                    Process.GetCurrentProcess().Suspend();
+                    break;
             }
         }
 

@@ -32,7 +32,7 @@ namespace AudioFixer.WinApi
             {
                 NtSuspendProcess(processHandle);
             }
-            catch (Exception)
+            finally
             {
                 CloseHandle(processHandle);
             }         
